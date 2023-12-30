@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ComicBookEYE</string>
+    <string name="toolbar_title">Comic Book EYE</string>
+    <string name="search_view_label">Ricerca</string>
 </resources>
