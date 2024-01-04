@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CardDefaultTextStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/card_default_text_color</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="CardTitleStyle" parent="CardDefaultTextStyle">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="CardStatusContentStyle" parent="CardDefaultTextStyle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/card_status_text_color</item>
+    </style>
+
+    <style name="CardDescriptionStyle" parent="CardDefaultTextStyle" />
+
+    <style name="BottomSheetRowLabelStyle">
+        <item name="android:textColor">@color/bottom_sheet_content_label_color</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>

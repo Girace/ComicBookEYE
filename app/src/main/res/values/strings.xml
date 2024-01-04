@@ -2,4 +2,8 @@
     <string name="app_name">ComicBookEYE</string>
     <string name="toolbar_title">Comic Book EYE</string>
     <string name="search_view_label">Ricerca</string>
+    <string name="unsupported_card_format">Formato non supportato</string>
+    <string name="bottom_sheet_comic_present">Presente</string>
+    <string name="bottom_sheet_comic_ordered">In prenotazione</string>
+    <string name="bottom_sheet_comic_absent">Mancante</string>
 </resources>

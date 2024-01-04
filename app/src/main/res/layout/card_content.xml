@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginBottom="10dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/card_content_image"
+            android:layout_width="130dp"
+            android:layout_height="200dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/checkbox_missing_books" />
+
+        <TextView
+            android:id="@+id/card_content_title"
+            style="@style/CardTitleStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="10dp"
+            android:maxLines="2"
+            android:textAlignment="textStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/card_content_image"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Titolo" />
+
+        <ImageView
+            android:id="@+id/card_status_image"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="10dp"
+            android:contentDescription="@null"
+            app:layout_constraintBottom_toBottomOf="@id/card_content_status"
+            app:layout_constraintStart_toEndOf="@id/card_content_image"
+            app:layout_constraintTop_toBottomOf="@id/card_content_title"
+            tools:src="@drawable/present_dot_circle" />
+
+        <TextView
+            android:id="@+id/card_content_status"
+            style="@style/CardStatusContentStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textAlignment="textStart"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/card_status_image"
+            app:layout_constraintTop_toBottomOf="@id/card_content_title"
+            tools:text="stato" />
+
+        <TextView
+            android:id="@+id/card_content_description"
+            style="@style/CardDescriptionStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="10dp"
+            android:ellipsize="end"
+            android:maxLines="4"
+            android:textAlignment="textStart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/card_content_image"
+            app:layout_constraintTop_toBottomOf="@id/card_content_status"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Descrizione" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
