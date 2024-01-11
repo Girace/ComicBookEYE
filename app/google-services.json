@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "487780167390",
+    "project_id": "comicbookeye-d4c2c",
+    "storage_bucket": "comicbookeye-d4c2c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:487780167390:android:21e77a1ab29f8ba0029c4f",
+        "android_client_info": {
+          "package_name": "com.example.comicbookeye"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAibN7Py9rwmFwaEQVq5R9srzCeASPK6Kk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

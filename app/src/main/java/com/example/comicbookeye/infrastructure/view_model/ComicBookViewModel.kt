@@ -30,5 +30,17 @@ class ComicBookViewModel(application: Application) : AndroidViewModel(applicatio
         viewModelScope.launch { repository.updateStatus(newStatus, comicId) }
     }
 
+    fun addDataToRemoteDB(comicsBook: List<ComicBook>) {
+        viewModelScope.launch {
+            repository.addDataToRemoteDB(comicsBook)
+        }
+    }
+
+    fun restoreDataFromRemoteDB() {
+        viewModelScope.launch {
+            repository.restoreDataFromRemoteDB()
+        }
+    }
+
 
 }

@@ -7,7 +7,7 @@ import com.example.comicbookeye.infrastructure.domain.ComicBook
 @Dao
 interface ComicBookDao {
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(comicBooks: List<ComicBook>)
 
     @Query("SELECT * from comics")
@@ -32,34 +32,37 @@ interface ComicBookDao {
      * dei dati.
      */
     @Transaction
-    suspend fun insertOrUpdateItems(items: List<ComicBook>) {
+    suspend fun insertOrUpdateItems(items: List<ComicBook>, forceUpdate: Boolean = false) {
         val itemsToInsert = mutableListOf<ComicBook>()
         val itemsToUpdate = mutableListOf<ComicBook>()
 
-        for (item in items) {
-            if (getItemById(item.id) == null) {
-                itemsToInsert.add(item)
-            } else {
-                itemsToUpdate.add(item)
+        if(forceUpdate) {
+            insertAll(items)
+        } else {
+            for (item in items) {
+                if (getItemById(item.id) == null) {
+                    itemsToInsert.add(item)
+                } else {
+                    itemsToUpdate.add(item)
+                }
+            }
+
+            if (itemsToInsert.isNotEmpty()) {
+                insertAll(itemsToInsert)
+            }
+
+            for (item in itemsToUpdate) {
+                updateComicExcludingStatus(
+                    item.id,
+                    item.title,
+                    item.series,
+                    item.image,
+                    item.description,
+                    item.volumeNumber
+                )
             }
         }
-
-        if (itemsToInsert.isNotEmpty()) {
-            insertAll(itemsToInsert)
-        }
-
-        for (item in itemsToUpdate) {
-            updateComicExcludingStatus(
-                item.id,
-                item.title,
-                item.series,
-                item.image,
-                item.description,
-                item.volumeNumber
-            )
-        }
     }
-
     @Query("SELECT * FROM comics WHERE id = :comicId LIMIT 1")
     fun getItemById(comicId: Int): ComicBook?
 

@@ -2,6 +2,8 @@ package com.example.comicbookeye.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.CheckBox
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.SearchView.OnQueryTextListener
@@ -103,5 +105,27 @@ class ComicBookEYEActivity : AppCompatActivity() {
             })
         }
         return adapterModels
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.app_bar_menu, menu)
+        return true;
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_backup -> {
+                val data = viewModel.allComicBooks.value
+                if (!data.isNullOrEmpty()){
+                    viewModel.addDataToRemoteDB(data)
+                }
+                true
+            }
+            R.id.action_restore -> {
+                viewModel.restoreDataFromRemoteDB()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }

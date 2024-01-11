@@ -6,4 +6,6 @@
     <string name="bottom_sheet_comic_present">Presente</string>
     <string name="bottom_sheet_comic_ordered">In prenotazione</string>
     <string name="bottom_sheet_comic_absent">Mancante</string>
+    <string name="app_bar_backup">Fai backup</string>
+    <string name="app_bar_restore">Carica backup</string>
 </resources>
